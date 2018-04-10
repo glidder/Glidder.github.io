@@ -1,67 +1,60 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Luis J. Quintana by glidder</title>
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta name="keywords" content="AICAM, PICAM, ai, comercial, demo, sparkle, generator">
+	<meta name="description" content="A Commercial-Mission-Ready Artificial Intelligence">
+	<meta name="author" content="Luis Quintana (@Glidder_)">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:image"
+    content="TODO" />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="header">Luis J. Quintana</h1>
-        <p class="header">Glidder</p>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+	<title> AIBM </title>
+</head>
 
+<body role="document" style="background: rgba(181,11,224,1);
+background: -moz-linear-gradient(left, rgba(181,11,224,1) 0%, rgba(39,230,99,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(181,11,224,1)), color-stop(100%, rgba(39,230,99,1)));
+background: -webkit-linear-gradient(left, rgba(181,11,224,1) 0%, rgba(39,230,99,1) 100%);
+background: -o-linear-gradient(left, rgba(181,11,224,1) 0%, rgba(39,230,99,1) 100%);
+background: -ms-linear-gradient(left, rgba(181,11,224,1) 0%, rgba(39,230,99,1) 100%);
+background: linear-gradient(to right, rgba(181,11,224,1) 0%, rgba(39,230,99,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b50be0', endColorstr='#27e663', GradientType=1 );">
+	<div class="container text-center" role="main" style="text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;">
+		<h1 style="font-family: 'Ultra', serif; font-size: 200%;"> AIBM </h1>
+		<h3 style="font-family: 'Ultra', serif; font-size: 200%;"> Artificial "Intelligence" for Business Managers </h3>
 
-        <ul>
-          <li><a class="buttons github" href="https://github.com/glidder">GitHub Profile</a></li>
-        </ul>
+		<div class="container" style="font-size: 200%; font-family: 'Bangers'; color:darkred;">
+			<span id="content"></span>
+		</div>
+		<div>
+    			<label for="uname">Texto a leer: </label>
+    			<input type="text" id="texto" name="texto">
+  		</div>
+		<div class="container">
+			<button class="btn btn-primary btn-lg" onclick="start()"><span class="glyphicon glyphicon-refresh"></span> Leer</button>
+		</div>
+	</div>
+	<script>
 
-      </header>
-      <section>
-        <h1>
-<a name="projects" class="anchor" href="#projects"><span class="octicon octicon-link"></span></a><strong>Projects</strong>
-</h1>
-
-<h3>
-<a name="unnamed" class="anchor" href="#unnamed"><span class="octicon octicon-link"></span></a>&lt;Unnamed&gt;</h3>
-
-<p>Board game based on cellular automata, in which two players work against each other to wipe every enemy cell from the board.</p>
-
-<ul>
-  <li><a class="buttons github" href="https://github.com/glidder/Cellular-Board">View on GitHub</a></li>
-</ul>
-
-<h3>
-<a name="unnamed" class="anchor" href="#unnamed"><span class="octicon octicon-link"></span></a>Django</h3>
-
-<p>A simple game created in collaboration with Javier Osuna <a href="https://github.com/javosuher">(javosuher)</a> for the practice of ASR problems using MATLAB.</p>
-
-<ul>
-  <li><a class="buttons github" href="https://github.com/glidder/ASR-game">View on GitHub</a></li>
-</ul>
-
-<h1>
-<a name="contact" class="anchor" href="#contact"><span class="octicon octicon-link"></span></a><strong>Contact</strong>
-</h1>
-
-<ul>
-<li><a href="http://twitter.com/Glidder_/">Twitter</a></li>
-</ul>
-      </section>
-      <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
-      </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		
-  </body>
+	function start(){
+		var inpt = document.getElementById("texto");
+		var speech = inpt.value;
+		speak(speech);
+	}
+	
+	function speak(msg){
+		var utterance = new SpeechSynthesisUtterance(msg);
+		utterance.lang = 'es';
+		//utterance.voice = window.speechSynthesis.getVoices()[38];
+		utterance.pitch = 0.3;
+		utterance.rate = 0.85;
+		window.speechSynthesis.speak(utterance);
+	}
+	</script>
+</body>
 </html>
